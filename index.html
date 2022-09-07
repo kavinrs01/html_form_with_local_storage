@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>merchant data input</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src=./script.js></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="content">
+        <div class="container">
+            <h1>Merchant Form</h1>
+            <div class="row">
+                <div class="col">
+                    <label> Name:</label><label style="color:red">*</label><br>
+                    <input class="form-control" type="text" id="name" oninput="removeNameMessage()">
+                    <div id="messageForName" style="color:red"></div><br>
+                </div>
+                <div class="col">
+                    <label>Email:</label><label style="color:red">*</label><br>
+                    <input class="form-control" type="email" id="email" oninput="removeEmailMessage()">
+                    <div id="messageForEmail" style="color:red"></div><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Phone Number:</label><label style="color:red">*</label><br>
+                    <input class="form-control" type="text" id="phonenumber" oninput="removePhoneNumberMessage()">
+                    <div id="messageForNumber" style="color:red"></div><br>
+                </div>
+                <div class="col">
+                    <label>website:</label><br>
+                    <input class="form-control" type="text" id="website"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Contact Name:</label><br>
+                    <input class="form-control" type="text" id="Contactname"><br>
+                </div>
+                <div class="col">
+                    <label> Contact Phone:</label><br>
+                    <input class="form-control" type="text" id="Contactphone"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Contact Email:</label><br>
+                    <input class="form-control" type="email" id="contactmail"><br>
+                </div>
+                <div class="col">
+                    <label>Notes</label><br>
+                    <textarea class="form-control" type="text" id="notes"></textarea><br>
+                </div>
+            </div>
+            <!-- <div class="row">
+            <div class="form-check" class="col"> -->
+
+            <label class="form-check-label">Choose your type of Business:</label><br>
+            <input class="form-check-input" type="radio" name="type" id="smallbusiness" value="smallbusiness">
+            <label class="form-check-label">Small Business</label><br>
+            <input class="form-check-input" type="radio" name="type" id="enterpriser" value="Enterprise">
+            <label class="form-check-label">Enterprise</label><br>
+            <input class="form-check-input" type="radio" name="type" id="enterprenur" value="enterprenur">
+            <label class="form-check-label">Entrepreneur</label><br>
+
+            <!-- </div>
+            <div class="col"> -->
+            <label>Choose your catagery:</label><br>
+            <select id="catagery">
+                <option>Clothes</option>
+                <option>Toys</option>
+                <option>Groceries</option>
+                <option>Electronics</option>
+            </select><br>
+            <!-- </div>
+        </div> -->
+            <div class="row">
+                <div class="col">
+                    <label>Comission Percentage</label><br>
+                    <input class="form-control" type="number" min="1" max="100" id="comissionpercentage"><br>
+
+                </div>
+                <div class="col">
+                    <label> Date:</label><br>
+                    <input class="form-control" type="date" id="date"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Choose the logo file</label><br>
+                    <input type="file" onchange="loadFile(event)" id="logo">
+                    <div id="displayingImageInInput"></div><br>
+
+                </div>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="criticalaccount">
+                <label class="form-check-label"> Critical account</label><br>
+            </div>
+
+            <label> Select the payment methods</label><br>
+            <div class="form-check form-switch">
+
+                <input class="form-check-input" type="checkbox" id="cashondelievery" value="cash on delivery">
+                <label class="form-check-label"> Cash on Delievery</label><br>
+                <input class="form-check-input" type="checkbox" id="UPI" value="UPI">
+                <label class="form-check-label"> UPI</label><br>
+                <input class="form-check-input" type="checkbox" id="cardpayment" value="card payment">
+                <label class="form-check-label"> Card payment</label><br>
+
+            </div>
+
+            <div class="text-center">
+                <div id="invisible">
+                    <button class="btn btn-success" onclick="submit()">Submit</button>
+                </div>
+                <div id="visibleupdate">
+                </div>
+                <button class="btn btn-info" style="margin-top: 4px;" onclick="formReset()">Reset</button>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <div id="dataTable"></div>
+    </div>
+</body>
+
+</html>

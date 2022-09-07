@@ -1,0 +1,11 @@
+.content{
+  margin:30px 10px 30px 10px;
+  padding: 0px;
+}
+.content label {
+  margin-bottom: 6px;
+}
+.content select{
+  margin-bottom: 10px;
+  
+}
